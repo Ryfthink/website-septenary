@@ -19,7 +19,8 @@ const counterSchema = new Schema({
 });
 
 // Create a unique index using the "field" and "_model" fields.
-counterSchema.index({field: 1, _model: 1}, {unique: true, required: true, index: -1});
+// counterSchema.index({field: 1, _model: 1}, {unique: true, required: true, index: -1});
+counterSchema.index({field: 1, _model: 1}, {unique: true});
 
 // Create _model using new schema.
 const IdentityCounter = <ICounterModel>mongoose.model('IdentityCounter', counterSchema);
