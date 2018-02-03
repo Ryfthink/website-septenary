@@ -1,0 +1,58 @@
+<nav id="nav-header"
+     class="navbar navbar-toggleable-md navbar-light fixed-top nav-header"
+     [class.header-hide]="headerHide"
+>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar">
+        <!--<span class="navbar-toggler-icon"></span>-->
+        <span><i class="fa fa-bars"></i></span>
+    </button>
+    <a class="nav-link p-0 pr-2 pl-md-3" routerLink="">
+        <img alt="brand" class="brand-img"
+             src="data:image/png;base64,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">
+    </a>
+    <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item d-flex justify-content-between align-items-center">
+                <a class="nav-link underline-anim" [class.active]="isActive('/page', true)" routerLink="">Home</a>
+            </li>
+            <li class="nav-item d-flex justify-content-between align-items-center">
+                <a class="nav-link underline-anim" [class.active]="isActive('/columnist/3', false)" routerLink="/columnist/3">Mr'剑</a>
+            </li>
+            <li class="nav-item d-flex justify-content-between align-items-center">
+                <a class="nav-link underline-anim" [class.active]="isActive('/columnist/4', false)" routerLink="/columnist/4">Marvin.TM</a>
+            </li>
+            <li class="nav-item d-flex justify-content-between align-items-center">
+                <a class="nav-link underline-anim" [class.active]="isActive('/columnist/5', false)" routerLink="/columnist/5">Azhong</a>
+            </li>
+            <li class="nav-item d-flex justify-content-between align-items-center">
+                <a class="nav-link underline-anim" [class.active]="isActive('/columnist/2', false)" routerLink="/columnist/2">0sland</a>
+            </li>
+            <li class="nav-item d-flex justify-content-between align-items-center">
+                <a class="nav-link underline-anim" [class.active]="isActive('/columnist/1', false)" routerLink="/columnist/1">御风</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li *ngIf="!loggedIn" class="nav-item d-flex justify-content-between align-items-center">
+                <a class="nav-link underline-anim" routerLink="/auth/login">
+                    <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;登录
+                </a>
+            </li>
+            <li *ngIf="loggedIn" class="nav-item d-flex justify-content-between align-items-center">
+                <a class="nav-link underline-anim" routerLink="/article/create">
+                    <i class="fa fa-edit"></i>&nbsp;写文章
+                </a>
+            </li>
+            <li *ngIf="loggedIn" class="nav-item d-flex justify-content-between align-items-center">
+                <a class="nav-link underline-anim" href="javascript:void(0);"
+                   (click)="onLogoutClick()">
+                    <i class="fa fa-power-off"></i>&nbsp;登出
+                </a>
+            </li>
+            <li *ngIf="loggedIn" class="nav-item d-flex justify-content-between align-items-center">
+                <a class="" style="margin-left: 1rem" [routerLink]="'/user/' + loginUser?._id">
+                    <img class="rounded-circle" [src]="authAvatar" style="width: 40px; height: 40px"/>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

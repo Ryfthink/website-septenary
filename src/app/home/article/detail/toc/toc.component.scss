@@ -1,0 +1,25 @@
+@import "../../../../theme/sass/conf/conf";
+
+.toc-link {
+  display: block;
+  color: $theme-color;
+  line-height: 1.8;
+  &:hover, &:active {
+    color: shade($theme-color, 50%);
+  }
+}
+
+.title {
+  font-weight: $font-bold;
+  line-height: 1.1;
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.toc {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

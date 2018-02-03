@@ -1,0 +1,51 @@
+<!--<article-header [article]="article"></article-header>-->
+<div class="row justify-content-center content-container animated fadeIn">
+    <div class="col-md-12 col-lg-7 mt-4 article-header" *ngIf="article">
+        <div class="title text-center mb-3">{{article.title}}</div>
+        <div class="text-center">
+            <article-tag *ngFor="let tag of article.tags" [tag]="tag"></article-tag>
+            <div class="mt-3 mb-3">
+                By
+                <span class="ml-1">
+                    <a [routerLink]="'/user/' + article.author._id">{{article.author.name}}</a>
+                </span>
+                <span class="mr-2 ml-2">/</span>
+                <span>{{article.views}}&nbsp;次浏览</span>
+                <span class="mr-2 ml-2">/</span>
+                <span>{{article.createdTime | date:'yyyy-MM-dd hh:mm'}}</span>
+                <span *ngIf="hasEditPermission()">
+                    <span class="mr-2 ml-2">/</span>
+                    <a [routerLink]="'/article/' + article._id + '/edit'" style="color: #41b883">编辑</a>
+                    <span class="ml-1 mr-1">·</span>
+                    <a href="javascript:void(0)" style="color: #fe606a" (click)="deleteArticleClick()">删除</a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12"></div>
+
+    <div class="col-lg-2 hidden-md-down"></div>
+
+    <div class="col-md-12 col-lg-7" *ngIf="article">
+        <div Markdown [data]="article.content" (tocUpdate)="onTocUpdate($event)"></div>
+
+        <div class="copyright">
+            作者：{{article.author?.name}} <br>
+            链接：{{ref}} <br>
+            來源：Septenary <br>
+            © 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。<br>
+        </div>
+
+        <app-comments #appComments [article]="article" id="comments"></app-comments>
+
+        <app-comments-create [article]="article" (onRequestAppendComment)="appComments.appendComment($event)"></app-comments-create>
+
+    </div>
+
+    <div class="col-lg-2 hidden-md-down">
+        <div class="sticky-top" style="top: 70px;" *ngIf="!!toc && toc.length > 0">
+            <app-article-toc [toc]="toc" [title]="article?.title"></app-article-toc>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+@import "../../theme/sass/conf/conf";
+
+button {
+  outline: 0;
+}
+
+.brand-img {
+  width: 40px;
+  height: 40px;
+}
+
+.navbar {
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+.header-hide {
+  margin-top: -60px;
+}
